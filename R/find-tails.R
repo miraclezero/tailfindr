@@ -312,8 +312,8 @@ find_tails <- function(fast5_dir,
 
     # Make a compute cluster
     cat(paste(cli::symbol$bullet,' Starting a parallel compute cluster...\n', sep=''))
-    #cl <- parallel::makeCluster(num_cores, outfile='')
-    cl <- parallel::makeCluster(num_cores)
+    cl <- parallel::makeCluster(num_cores, outfile='')
+    #cl <- parallel::makeCluster(num_cores)
     on.exit(parallel::stopCluster(cl))
 
     doSNOW::registerDoSNOW(cl)
